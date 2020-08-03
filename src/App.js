@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AboutPage from './pages/AboutPage';
+import { ResumePage } from './pages/ResumePage';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { PictureBackground } from './pages/PictureBackground';
+import { withStyles, Card } from '@material-ui/core';
 
-function App() {
+export const AppComponent = ({ classes }) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <PictureBackground>
+        <Card className={classes.background}>
+          <Route to='/about' compontent={AboutPage} />
+          <Route to='/resume' compontent={ResumePage} />
+        </Card>
+      </PictureBackground>
+    </BrowserRouter>
   );
-}
+};
 
-export default App;
+const styles = {
+  background: {
+    width: '100px',
+    height: '100px',
+    background: '#222222',
+  },
+};
+
+export const App = withStyles(styles)(AppComponent);

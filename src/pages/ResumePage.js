@@ -1,7 +1,10 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core';
 
-const ResumePage = () => {
-  return <Card class='background'></Card>;
+const ResumePageComponent = ({ classes }) => {
+  return <div></div>;
 };
 
-export default ResumePage;
+const styles = {};
+
+export const ResumePage = withStyles(styles)(ResumePageComponent);
