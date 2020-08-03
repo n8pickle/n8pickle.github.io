@@ -4,7 +4,7 @@ import React from 'react';
 import BackgroundImage from '../assets/images/Background.jpg';
 
 const PictureBackgroundComponent = ({ classes }) => {
-  return <div className={classes.picture}>{element.props.children}</div>;
+  return <div className={classes.picture}></div>;
 };
 
 const styles = {
