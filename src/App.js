@@ -3,27 +3,37 @@ import './App.css';
 import AboutPage from './pages/AboutPage';
 import { ResumePage } from './pages/ResumePage';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { PictureBackground } from './pages/PictureBackground';
 import { withStyles, Card } from '@material-ui/core';
+import BackgroundImage from './assets/images/Background.jpg';
 
 export const AppComponent = ({ classes }) => {
   return (
     <BrowserRouter>
-      <PictureBackground>
+      <div className={classes.picture}>
         <Card className={classes.background}>
           <Route to='/about' compontent={AboutPage} />
           <Route to='/resume' compontent={ResumePage} />
         </Card>
-      </PictureBackground>
+      </div>
     </BrowserRouter>
   );
 };
 
 const styles = {
   background: {
-    width: '100px',
-    height: '100px',
-    background: '#222222',
+    width: '80%',
+    maxWidth: '1000px',
+    marginTop: '3%',
+    marginBottom: '3%',
+    height: '95vh',
+    background: 'rgba(10, 10, 10, 0.4)',
+  },
+  picture: {
+    backgroundSize: 'cover',
+    minHeight: 100 + 'vh',
+    backgroundImage: 'url(' + BackgroundImage + ')',
+    display: 'flex',
+    justifyContent: 'center',
   },
 };
 
