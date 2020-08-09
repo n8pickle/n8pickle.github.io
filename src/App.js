@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import AboutPage from './pages/AboutPage';
+import { AboutPage } from './pages/AboutPage';
 import { ResumePage } from './pages/ResumePage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { withStyles, Card } from '@material-ui/core';
@@ -11,8 +11,8 @@ export const AppComponent = ({ classes }) => {
     <BrowserRouter>
       <div className={classes.picture}>
         <Card className={classes.background}>
-          <Route to='/about' compontent={AboutPage} />
-          <Route to='/resume' compontent={ResumePage} />
+          <Route path='/about' component={AboutPage} />
+          <Route path='/resume' exact component={ResumePage} />
         </Card>
       </div>
     </BrowserRouter>
